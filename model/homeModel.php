@@ -3,7 +3,7 @@
 	require_once 'mainModel.php'; 
 	class homeModel extends mainModel
 	{
-		protected static function listPayment() {
+		protected static function listPayment() { 
 			$sql = mainModel::conexion()
 				->prepare("SELECT * FROM payment p ORDER BY p.id DESC");
 			$sql -> execute();
@@ -11,10 +11,18 @@
 			$sql = null;
 			return $resutl;
 		}
+		protected static function infoPay($id_pay) { 
+			$sql = mainModel::conexion()
+				->prepare("SELECT * FROM payment p WHERE id = $id_pay");
+			$sql -> execute();
+			$resutl = $sql->fetch(PDO::FETCH_OBJ);				
+			$sql = null;
+			return $resutl;
+		}
 		
 		protected static function listPaymentUser($user_id) {
 			$sql = mainModel::conexion()
-				->prepare("SELECT * FROM payment p ORDER BY p.id DESC");
+				->prepare("SELECT * FROM payment p WHERE p.user_id = $user_id ORDER BY p.id DESC ");
 			$sql -> execute();
 			$resutl = $sql->fetchAll(PDO::FETCH_OBJ);				
 			$sql = null;

@@ -10,3 +10,5 @@ require_once './controller/homeController.php'
         ?>
     </div>
 </div>
+
+<!-- Mostrar el historial de pagos de un cliente -->

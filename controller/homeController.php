@@ -56,13 +56,11 @@
 				'description_pay' => $_POST['description_pay'],
 				'id_pay' => $_POST['id_pay'],
 			];
-			homeModel::updatePaymentM($datos);
-			// if () {
-				
-			// } else {
-				
-			// }
-			
+			homeModel::updatePaymentM($datos); 
+		}
+
+		public function infoPayment($id_pay){
+			return homeModel::infoPay($id_pay);
 		}
 
 	}

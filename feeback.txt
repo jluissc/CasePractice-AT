@@ -1,0 +1,10 @@
+// darle formato en español a nuestras fechas
+// $sqlF = mainModelo::conexion()->prepare("SET GLOBAL lc_time_names = 'es_ES'");
+// $sqlF -> execute();
+// $sql = mainModelo::conexion()->prepare("SELECT monto, DATE_FORMAT(fecha, '%d de %b %Y') as fecha FROM pagos_detalles WHERE pagos_id =:id");
+// $sql->bindParam(':id',$id);
+
+1. El promotor debe estar logueado y con permisos como editor
+2. Verificacion del deposito si es correcto, antes de asignar el saldo al cliente
+3. Crear una tabla de historial de pedido de recarga (asi sea valido o no el deposito nos serviria para analisis de tipo de usuarios)
+4. 

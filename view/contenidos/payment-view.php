@@ -2,15 +2,18 @@
 $ruta = explode("/", $_GET['ruta']); 
 require_once './controller/homeController.php';
 
+$homeCon = new homeController();
+$infoPay = $homeCon->infoPayment($ruta[1]);
 ?>
-<div class="container center p-4">
+<div class="container center p-4"> 
+    <h1 class="container center">Monto a editar : <?php echo $infoPay->amount ?></h1>
     <div id="alert">
 
     </div>
     <div class="form-row">
         <div class="form-group col-md-3 container center">
             <label for="amount_pay">Amount</label>
-            <input type="number" class="form-control" id="amount_pay" name="amount_pay" placeholder="Amount">
+            <input type="number" class="form-control" value="<?php echo $infoPay->amount ?>" id="amount_pay" name="amount_pay" placeholder="Amount">
         </div>
     </div>
     <div class="form-group">
@@ -41,14 +44,18 @@ require_once './controller/homeController.php';
         .then( r => r.text())
         .then( r => {        
             if (r) {
-                hmtlAlert.innerHTML = 'Editado correctamente';
+                hmtlAlert.innerHTML = '<span class="btn btn-success">Editado correctamente</span>';
                 setTimeout(() => {
                     window.location.href = URL+'user/'+id_user;
                 }, 1500);
             }
-            else hmtlAlert.innerHTML = 'Error al editar';
+            else hmtlAlert.innerHTML = '<span class="btn btn-danger">Editado correctamente</span>';
         })    
 }
 
 </script>
 
+<!-- 
+
+Editar algun pago seleccionado
+ -->

@@ -21,3 +21,9 @@
     </tbody>
   </table>
 </div>
+
+<!-- 
+Aqui mostrar todos los pagos 
+
+
+ -->
